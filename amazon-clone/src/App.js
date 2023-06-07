@@ -13,13 +13,11 @@ const App = () => {
         <main>
           <Route path="/home" component={Home} />
           <Route path="/product" component={Product} />
-          <Route path="/products/:id">
-            <ProductDetails />
-          </Route>
+          <Route path="/products/:id" component={ProductDetails} />
         </main>
       </div>
     </Router>
-  );  
+  );
 };
 
 export default App;
