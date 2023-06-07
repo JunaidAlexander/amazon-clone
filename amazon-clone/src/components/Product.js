@@ -11,7 +11,7 @@ const Product = () => {
           <Link to="/products/01">Product 1</Link>
         </li >
         <li>
-          <Link to="/products/02">Product 2</Link>
+          <Link to="/products/02">Product 2</Link  >
         </li>
         <li>
           <Link to="/products/03">Product 3</Link>
