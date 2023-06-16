@@ -11,9 +11,17 @@ const App = () => {
       <div>
         <Header />
         <main>
-          <Route path="/home" component={Home} />
-          <Route path="/product" component={Product} />
-          <Route path="/products/:id" component={ProductDetails} />
+          <Route path="/home">
+            <Home />
+          </Route>
+
+          <Route path="/product">
+            <Product />
+          </Route>
+
+          <Route path="/product-details/:id">
+            <ProductDetails />
+          </Route>
         </main>
       </div>
     </Router>
