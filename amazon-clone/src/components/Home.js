@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import "./Home.css";
-import Product from "./Product";
+import Products from "./Products";
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
           src="https://m.media-amazon.com/images/I/41s-DsYgxDL._SX1500_.jpg"
           alt="hero image"
         />
-        <Product />
+      <Products /> 
       </div>
     </div>
   );

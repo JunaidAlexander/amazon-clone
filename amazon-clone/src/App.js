@@ -12,11 +12,11 @@ const App = () => {
       <div>
         <Header />
         <main>
-          <switch>
-          <Route path="/" exact>
+          <Switch>
+           <Route path="/" exact>
             <Redirect to="/home" />
-
           </Route>
+          
           <Route path="/home">
             <Home />
           </Route>
@@ -31,8 +31,10 @@ const App = () => {
 
           <Route path="/login">
             <Login />
-          </Route>
-          </switch>
+          </Route> 
+          
+          </Switch>
+
         </main>
       </div>
     </Router>
