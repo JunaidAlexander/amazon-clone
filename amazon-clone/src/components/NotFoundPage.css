@@ -1,0 +1,17 @@
+.Not__Found {
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  background-color: white;
+}
+
+
+.Not__Found > img {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+
