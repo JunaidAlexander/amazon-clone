@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -13,10 +14,30 @@ import Login from "./components/layouts/Login";
 import NotFoundPage from "./components/NotFoundPage";
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const userInfo = localStorage.getItem("userInfo");
+
+    if (userInfo === "1") {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  const loginHandler = (email, password) => {
+    localStorage.setItem("userInfo", "1");
+    setIsLoggedIn(true);
+  };
+
+  const logoutHandler = () => {
+    localStorage.removeItem("userInfo");
+    setIsLoggedIn(false);
+  };
+
   return (
     <Router>
       <>
-        <Header />
+        <Header isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
         <main>
           <Switch>
             <Route path="/" exact>
@@ -36,7 +57,7 @@ const App = () => {
             </Route>
 
             <Route path="/login">
-              <Login />
+              <Login onLogin={loginHandler} />
             </Route>
 
             <Route path="*">
@@ -50,3 +71,6 @@ const App = () => {
 };
 
 export default App;
+
+
+// checkout {isLogin  > Payment }
