@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -12,34 +12,15 @@ import Header from "./components/layouts/Header";
 import ProductDetails from "./components/ProductDetails";
 import Login from "./components/layouts/Login";
 import NotFoundPage from "./components/NotFoundPage";
-import AuthContext from "./components/Context/authContext";
 
-const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  useEffect(() => {
-    const userInfo = localStorage.getItem("isLoggedIn");
-
-    if (userInfo === "1") {
-      setIsLoggedIn(true);
-    }
-  }, []);
-
-  const loginHandler = (email, password) => {
-    localStorage.setItem("isLoggedIn", "1");
-    setIsLoggedIn(true);
-  };
-
-  const logoutHandler = () => {
-    localStorage.removeItem("isLoggedIn");
-    setIsLoggedIn(false);
-  };
-  
+const App = () => 
+{
+  <>
   return (
     <Router>
-      <AuthContext.Provider value={{ isLoggedIn: isLoggedIn }}>
-        <Header isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
-        <main>
+        <Header onLogout={logoutHandler} />
+        <main> 
           <Switch>
             <Route path="/" exact>
               <Redirect to="/home" />
@@ -58,7 +39,7 @@ const App = () => {
             </Route>
 
             <Route path="/login">
-              <Login onLogin={loginHandler} />
+              <Login />
             </Route>
 
             <Route path="*">
@@ -66,8 +47,8 @@ const App = () => {
             </Route>
           </Switch>
         </main>
-      </AuthContext.Provider>
     </Router>
+    </>
   );
 };
 
