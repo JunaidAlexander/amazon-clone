@@ -12,12 +12,13 @@ import Header from "./components/layouts/Header";
 import ProductDetails from "./components/ProductDetails";
 import Login from "./components/layouts/Login";
 import NotFoundPage from "./components/NotFoundPage";
+import AuthContext from "./components/Context/authContext";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    const userInfo = localStorage.getItem("userInfo");
+    const userInfo = localStorage.getItem("isLoggedIn");
 
     if (userInfo === "1") {
       setIsLoggedIn(true);
@@ -25,18 +26,18 @@ const App = () => {
   }, []);
 
   const loginHandler = (email, password) => {
-    localStorage.setItem("userInfo", "1");
+    localStorage.setItem("isLoggedIn", "1");
     setIsLoggedIn(true);
   };
 
   const logoutHandler = () => {
-    localStorage.removeItem("userInfo");
+    localStorage.removeItem("isLoggedIn");
     setIsLoggedIn(false);
   };
-
+  
   return (
     <Router>
-      <>
+      <AuthContext.Provider value={{ isLoggedIn: isLoggedIn }}>
         <Header isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
         <main>
           <Switch>
@@ -65,12 +66,9 @@ const App = () => {
             </Route>
           </Switch>
         </main>
-      </>
+      </AuthContext.Provider>
     </Router>
   );
 };
 
 export default App;
-
-
-// checkout {isLogin  > Payment }
