@@ -16,10 +16,9 @@ import NotFoundPage from "./components/NotFoundPage";
 
 const App = () => 
 {
-  <>
   return (
     <Router>
-        <Header onLogout={logoutHandler} />
+      <Header   />
         <main> 
           <Switch>
             <Route path="/" exact>
@@ -48,8 +47,9 @@ const App = () =>
           </Switch>
         </main>
     </Router>
-    </>
   );
 };
 
 export default App;
+
+

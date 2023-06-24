@@ -5,9 +5,10 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import AuthContext from "../Context/authContext";
 
+
 const Header = () => {
   const cxt = useContext(AuthContext);
-
+console.log(cxt);
   return (
     <header className="header">
       <Link to="/">
@@ -19,9 +20,10 @@ const Header = () => {
         <SearchIcon className="header__searchIcon" />
       </div>
 
-      <div className="header__nav">
-        {cxt.isLoggedIn
-          ? <div className="header__option" onClick={cxt.onLogout}>
+<div className="header__nav">
+        {cxt && cxt.isLoggedIn
+        
+          ?<div className="header__option" onClick={cxt.onLogout}>
               <span className="header__optionOne">Hello User</span>
               <span className="header__optionTwo">Sign Out</span>
             </div>

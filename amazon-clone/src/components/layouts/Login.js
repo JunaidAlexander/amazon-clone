@@ -1,6 +1,8 @@
 import React, { useState, useReducer, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import { useContext } from "react";
+import AuthContext from "../Context/authContext";
 
 const reducer = (state, action) => {
   if (action.type === "EMAIL_INPUT") {
@@ -34,6 +36,7 @@ const initialState = {
 };
 
 const Login = ({ onLogin }) => {
+  const cxt = useContext(AuthContext);
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const { emailValue: email, passwordValue: password, formIsValid } = state;
@@ -67,7 +70,7 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
     console.log("Entered Email:", email);
     console.log("Entered Password:", password);
-    onLogin(state.emailValue, state.passwordValue);
+    cxt?.onLogin(state.emailValue, state.passwordValue);
   };
 
   return (

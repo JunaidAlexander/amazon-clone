@@ -1,9 +1,12 @@
 import { createContext ,useState, useEffect } from "react";
 
 const AuthContext = createContext({ isLoggedIn: false , onLogout: () => {
+
+}
+, onLogin: (email, password) => {
+  console.log("onLogin")
   
 }
-, onLogin: (email, password) => {}
 
 });
 
