@@ -37,9 +37,9 @@ return (
 value={{ 
   isLoggedIn: isLoggedIn, 
   onLogout: logoutHandler,  
-  onLogin: loginHandler
+  onLogin: loginHandler,
 }} >
-  {props.childred}
+  {props.children}
   </AuthContext.Provider>
   );
 };
