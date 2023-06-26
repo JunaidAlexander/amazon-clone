@@ -3,6 +3,9 @@ import "./Product.css";
 import { Star } from "@mui/icons-material";
 import ShoppingContext from "../Shopping/ShoppingContext";
 
+
+
+
 const Product = ({ id, image, title, rating, price }) => {
   const shoppingContext = useContext(ShoppingContext);
   const { addToBasket } = shoppingContext;
