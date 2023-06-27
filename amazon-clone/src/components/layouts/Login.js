@@ -1,4 +1,4 @@
-import React, { useState, } from "react";
+import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./Login.css";
 import { auth } from "../../firebase";
@@ -13,7 +13,7 @@ const Login = () => {
     auth
       .signInWithEmailAndPassword(email, password)
       .then(auth => {
-        history.push("/push");
+        history.push("/home");
       })
       .catch(error => alert(error.message));
   };
@@ -24,7 +24,7 @@ const Login = () => {
       .createUserWithEmailAndPassword(email, password)
       .then(auth => {
         if (auth) {
-          history.push("/push");
+          history.push("/home");
         }
       })
       .catch(error => alert(error.message));
@@ -66,7 +66,6 @@ const Login = () => {
           Sale. Please see our Privacy Notice, our Cookies Notice, and our
           Interest-Based Ads Notice.
         </p>
-
 
         <button className="login__registerButton" onClick={register}>
           Create your Account

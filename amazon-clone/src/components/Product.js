@@ -26,9 +26,14 @@ const Product = ({ id, image, title, rating, price }) => {
             .fill()
             .map((_, i) => (
               <Star key={i} />
-            ))}
+              
+            )
+       
+            )
+            
+            }
         </div>
-        <p className="product__price">{price}</p>
+        <p className="product__price"><small>R</small><strong>{price}</strong></p>
       </div>
       <button className="product__button" onClick={addToBasketHandler}>
         Add to Basket

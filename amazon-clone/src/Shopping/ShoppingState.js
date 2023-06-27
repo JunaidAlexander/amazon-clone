@@ -11,12 +11,19 @@ const ShoppingState = (props) => {
     return basket?.reduce((amount, item) => item.price + amount, 0);
   };
 
-  const addToBasket = (item) => {
+  const addToBasket = async ({item}) => {
     dispatch({
       type: "ADD_TO_BASKET",
       payload: item,
     });
   };
+
+  const removeFromBasket = (item) => {
+    dispatch({
+      type: "REMOVE_FROM_BASKET",
+      payload: item,
+    });
+  }
 
   const setUser = (user) => { // Fixed typo in function name
     dispatch({ // Added curly braces to create an object for dispatch
@@ -32,7 +39,8 @@ const ShoppingState = (props) => {
         user: state.user,
         getBasketTotal,
         addToBasket,
-        setUser, // Fixed typo in variable name
+        setUser,
+        removeFromBasket,
       }}
     >
       {props.children}

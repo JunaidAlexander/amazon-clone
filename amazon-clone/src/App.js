@@ -12,8 +12,10 @@ import Header from "./components/layouts/Header";
 import ProductDetails from "./components/ProductDetails";
 import Login from "./components/layouts/Login";
 import NotFoundPage from "./components/NotFoundPage";
+import Checkout from "./components/Checkout";
 import ShoppingContext from "./Shopping/ShoppingContext";
 import { auth } from "./firebase.js";
+import { Check } from "@mui/icons-material";
 
 const App = () => {
   const shoppingContext = useContext(ShoppingContext);
@@ -39,21 +41,31 @@ const App = () => {
           <Route exact path="/">
             <Redirect to="/home" />
           </Route>
+          
           <Route path="/home">
             <Home />
           </Route>
+
           <Route path="/products">
             <Products />
           </Route>
+
           <Route path="/products/:id">
             <ProductDetails />
           </Route>
+
+          <Route path="/checkout">
+            <Checkout />
+          </Route>
+
           <Route path="/login">
             <Login />
           </Route>
+
           <Route path="*">
             <NotFoundPage />
           </Route>
+
         </Switch>
       </main>
     </Router>
