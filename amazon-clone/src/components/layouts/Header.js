@@ -8,8 +8,9 @@ import { auth } from "../../firebase";
 
 const Header = () => {
   const shoppingContext = useContext(ShoppingContext);
-  const { basket, user } = shoppingContext;
   
+  const { basket, user } = shoppingContext;
+  console.log(basket);
   const handlerAuthenticaton = () => {
     if(user){
       auth.signOut();
@@ -26,7 +27,7 @@ const Header = () => {
 
       <div className="header__search">
         <input type="text" className="header__input" />
-        <SearchIcon className="header__searchIcon" />
+      <SearchIcon className="header__searchIcon" />
       </div>
 
 <div className="header__nav">    
@@ -56,12 +57,12 @@ const Header = () => {
           <span className="header__optionOne">Your</span>
           <span className="header__optionTwo">Prime</span>
         </div>
-
+    <Link to="/checkout">
         <div className="header__optionBasket">
           <ShoppingBasketIcon />
           <span className="header__optionTwo header__basketCount">{basket?.length}</span>
-
         </div>
+        </Link>
       </div>
     </header>
   );

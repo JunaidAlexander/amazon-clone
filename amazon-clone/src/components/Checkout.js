@@ -5,7 +5,11 @@ import CheckoutProduct from './CheckoutProducts';
 import SubTotal from './SubTotal';
 
 const Checkout = () => {
-  const { user, basket } = useContext(ShoppingContext); // Destructure user and basket from the ShoppingContext
+  const { user, basket } = useContext(ShoppingContext);
+  
+  
+  console.log('basket: ', basket); // Destructure user and basket from the ShoppingContext
+  // Destructure user and basket from the ShoppingContext
 
   return (
     <div className='checkout'>

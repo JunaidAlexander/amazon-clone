@@ -1,6 +1,8 @@
 import { useReducer } from "react";
 import ShoppingContext from "./ShoppingContext";
 import ShoppingReducer from "./ShoppingReducer";
+import { SaveBasketToStorage, GetBasketFromStorage } from "../Helpers/localstorage";
+
 
 const ShoppingState = (props) => {
   const initialState = { basket: [], user: null };
@@ -8,15 +10,25 @@ const ShoppingState = (props) => {
 
   // Selectors
   const getBasketTotal = (basket) => {
-    return basket?.reduce((amount, item) => item.price + amount, 0);
+     basket?.reduce((amount, item) => item.price + amount, 0);
   };
 
   const addToBasket = async ({item}) => {
     dispatch({
+
       type: "ADD_TO_BASKET",
       payload: item,
     });
+    SaveBasketToStorage(state.basket);
   };
+
+const getBasket = () => {
+  dispatch({
+type: "SET_TO_BASKET",
+payload: GetBasketFromStorage(),
+
+})}
+
 
   const removeFromBasket = (item) => {
     dispatch({
@@ -41,6 +53,7 @@ const ShoppingState = (props) => {
         addToBasket,
         setUser,
         removeFromBasket,
+        getBasket,
       }}
     >
       {props.children}

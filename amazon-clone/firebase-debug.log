@@ -1,0 +1,183 @@
+[debug] [2023-06-27T23:02:29.683Z] ----------------------------------------------------------------------
+[debug] [2023-06-27T23:02:29.686Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Dell\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-06-27T23:02:29.687Z] CLI Version:   12.4.0
+[debug] [2023-06-27T23:02:29.687Z] Platform:      win32
+[debug] [2023-06-27T23:02:29.688Z] Node Version:  v16.13.0
+[debug] [2023-06-27T23:02:29.689Z] Time:          Tue Jun 27 2023 16:02:29 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-06-27T23:02:29.690Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-27T23:02:29.808Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-27T23:02:29.809Z] > authorizing via signed-in user (junaidalexander76@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Dell\Desktop\amazon clone\amazon-clone
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-06-27T23:02:42.384Z] Using project from CLI flag: clone-6644d
+[debug] [2023-06-27T23:02:42.391Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clone-6644d [none]
+[debug] [2023-06-27T23:02:43.085Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clone-6644d 200
+[debug] [2023-06-27T23:02:43.086Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clone-6644d {"projectId":"clone-6644d","projectNumber":"973673197072","displayName":"amazon-clone","name":"projects/clone-6644d","resources":{"hostingSite":"clone-6644d","realtimeDatabaseInstance":"clone-6644d-default-rtdb"},"state":"ACTIVE","etag":"1_06866eb3-4c02-4fb3-b3bf-15121411d142"}
+[info] i  Using project clone-6644d (amazon-clone) 
+[info] 
+=== Functions Setup
+[debug] [2023-06-27T23:02:43.213Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-27T23:02:43.214Z] > authorizing via signed-in user (junaidalexander76@gmail.com)
+[debug] [2023-06-27T23:02:43.214Z] [iam] checking project clone-6644d for permissions ["firebase.projects.get"]
+[debug] [2023-06-27T23:02:43.215Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/clone-6644d:testIamPermissions [none]
+[debug] [2023-06-27T23:02:43.216Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/clone-6644d:testIamPermissions x-goog-quota-user=projects/clone-6644d
+[debug] [2023-06-27T23:02:43.216Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/clone-6644d:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-06-27T23:02:45.991Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/clone-6644d:testIamPermissions 200
+[debug] [2023-06-27T23:02:45.991Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/clone-6644d:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-06-27T23:02:45.992Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-06-27T23:02:45.992Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/clone-6644d
+[debug] [2023-06-27T23:02:45.994Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-06-27T23:02:45.994Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/clone-6644d
+[debug] [2023-06-27T23:02:48.144Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/cloudfunctions.googleapis.com 200
+[debug] [2023-06-27T23:02:48.145Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2023-06-27T23:02:48.145Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/cloudfunctions.googleapis.com:enable [none]
+[debug] [2023-06-27T23:02:48.146Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/cloudfunctions.googleapis.com:enable x-goog-quota-user=projects/clone-6644d
+[debug] [2023-06-27T23:02:49.165Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/runtimeconfig.googleapis.com 200
+[debug] [2023-06-27T23:02:49.165Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-06-27T23:02:50.740Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/cloudfunctions.googleapis.com:enable 200
+[debug] [2023-06-27T23:02:50.740Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/cloudfunctions.googleapis.com:enable [omitted]
+[debug] [2023-06-27T23:03:00.751Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-06-27T23:03:00.751Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/clone-6644d
+[debug] [2023-06-27T23:03:02.729Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/cloudfunctions.googleapis.com 200
+[debug] [2023-06-27T23:03:02.729Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/clone-6644d/services/cloudfunctions.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] +  Wrote functions/package.json 
+[info] +  Wrote functions/.eslintrc.js 
+[info] +  Wrote functions/index.js 
+[info] +  Wrote functions/.gitignore 
+[info] 
+[error] NPM install failed, continuing with Firebase initialization...
+[info] 
+[info] i  Writing configuration info to firebase.json... 
+[info] i  Writing project information to .firebaserc... 
+[info] 
+[info] +  Firebase initialization complete! 
+[debug] [2023-06-27T23:48:34.534Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\Dell\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:557:17)
+    at processTimers (node:internal/timers:500:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-06-28T06:33:12.528Z] ----------------------------------------------------------------------
+[debug] [2023-06-28T06:33:12.531Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Dell\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
+[debug] [2023-06-28T06:33:12.531Z] CLI Version:   12.4.0
+[debug] [2023-06-28T06:33:12.532Z] Platform:      win32
+[debug] [2023-06-28T06:33:12.532Z] Node Version:  v16.13.0
+[debug] [2023-06-28T06:33:12.534Z] Time:          Tue Jun 27 2023 23:33:12 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-06-28T06:33:12.534Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-28T06:33:12.676Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-28T06:33:12.677Z] > authorizing via signed-in user (junaidalexander76@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2023-06-28T06:33:12.694Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[warn] !  ui: Emulator UI unable to start on port 4000, starting on 4001 instead. {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI unable to start on port 4000, starting on 4001 instead."}}
+[debug] [2023-06-28T06:33:12.697Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4001},{"address":"::1","family":"IPv6","port":4001}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[warn] !  emulators: It seems that you are running multiple instances of the emulator suite for project clone-6644d. This may result in unexpected behavior. 
+[debug] [2023-06-28T06:33:12.729Z] [hub] writing locator at C:\Users\Dell\AppData\Local\Temp\hub-clone-6644d.json
+[debug] [2023-06-28T06:33:12.832Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-06-28T06:33:12.832Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-06-28T06:33:12.833Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4001},{"address":"::1","family":"IPv6","port":4001}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[debug] [2023-06-28T06:33:12.848Z] defaultcredentials: writing to file C:\Users\Dell\AppData\Roaming\firebase\junaidalexander76_gmail_com_application_default_credentials.json
+[debug] [2023-06-28T06:33:12.858Z] Setting GAC to C:\Users\Dell\AppData\Roaming\firebase\junaidalexander76_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Dell\\AppData\\Roaming\\firebase\\junaidalexander76_gmail_com_application_default_credentials.json"}}
+[debug] [2023-06-28T06:33:12.862Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clone-6644d/adminSdkConfig [none]
+[debug] [2023-06-28T06:33:13.543Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clone-6644d/adminSdkConfig 200
+[debug] [2023-06-28T06:33:13.543Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clone-6644d/adminSdkConfig {"projectId":"clone-6644d","databaseURL":"https://clone-6644d-default-rtdb.firebaseio.com","storageBucket":"clone-6644d.appspot.com"}
+[debug] [2023-06-28T06:33:13.645Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-06-28T06:33:13.645Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-06-28T06:33:13.646Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\Dell\\.cache\\firebase\\emulators\\ui-v1.11.6\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\Dell\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.6\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-06-28T06:33:14.023Z] Web / API server started at 127.0.0.1:4001
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4001\n"}}
+[debug] [2023-06-28T06:33:14.024Z] Web / API server started at ::1:4001
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4001\n"}}
+[info] i  functions: Watching "C:\Users\Dell\Desktop\amazon clone\amazon-clone\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Dell\\Desktop\\amazon clone\\amazon-clone\\functions\" for Cloud Functions..."}}
+[debug] [2023-06-28T06:33:14.219Z] Validating nodejs source
+[debug] [2023-06-28T06:33:17.789Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "stripe": "^12.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-06-28T06:33:17.789Z] Building nodejs source
+[debug] [2023-06-28T06:33:17.790Z] Failed to find version of module node: reached end of search path C:\Users\Dell\Desktop\amazon clone\amazon-clone\functions\node_modules
+[warn] !  functions: Your requested "node" version "18" doesn't match your global version "16". Using node@16 from host. 
+[debug] [2023-06-28T06:33:17.796Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-06-28T06:33:17.820Z] Found firebase-functions binary at 'C:\Users\Dell\Desktop\amazon clone\amazon-clone\functions\node_modules\.bin\firebase-functions'
+[debug] [2023-06-28T06:33:18.602Z] Serving at port 8409
+
+[debug] [2023-06-28T06:33:19.409Z] Got response from /__/functions.yaml Failed to generate manifest from function source: ReferenceError: functions is not defined
+[debug] [2023-06-28T06:33:19.419Z] Failed to parse functions.yaml incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 65:
+     ...  function source: ReferenceError: functions is not defined
+                                         ^ {"name":"YAMLException","reason":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line","mark":{"name":null,"buffer":"Failed to generate manifest from function source: ReferenceError: functions is not defined\n\u0000","position":64,"line":0,"column":64},"message":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 65:\n     ...  function source: ReferenceError: functions is not defined\n                                         ^"}
+[debug] [2023-06-28T06:33:19.429Z] shutdown requested via /__/quitquitquit
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: ReferenceError: functions is not defined {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: ReferenceError: functions is not defined"}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4001/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4001/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 

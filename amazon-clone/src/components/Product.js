@@ -17,7 +17,7 @@ const Product = ({ id, image, title, rating, price }) => {
   };
 
   return (
-    <div className="product">
+    <div className="product"key={id} >
       <img src={image} alt="" />
       <div className="product__info">
         <p>{title}</p>
