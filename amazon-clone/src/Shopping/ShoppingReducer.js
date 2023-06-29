@@ -39,7 +39,7 @@ case "SET_TO_BASKET":
     case "EMPAITY_BASKET":
       return {
         ...state,
-        user: action.payload
+        basket: []
       };
 
     case "SET_USER":

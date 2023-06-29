@@ -10,7 +10,7 @@ const SubTotal = () => {
   console.log(getBasketTotal(basket))
 
 const handleTest = (e) => {
-  e.preventDefault;
+  e.preventDefault();
   console.log(getBasketTotal());
 
 }

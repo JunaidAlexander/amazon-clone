@@ -5,11 +5,14 @@ import axios from 'axios';
 import ShoppingContext from '../Shopping/ShoppingContext';
 import CheckoutProducts from './CheckoutProducts';
 import CurrencyFormat from 'react-currency-format';
+import {db } from '../firebase';
+import './Payment.css';
+
 
 
 
 export default function Payment() {
-  const { user, basket, getBasketTotal } = useContext(ShoppingContext);
+  const { user, basket, getBasketTotal, emptyBasket, } = useContext(ShoppingContext);
   const stripe = useStripe();
   const elements = useElements();
   const history = useHistory();
@@ -46,12 +49,24 @@ export default function Payment() {
 
     if (payload.error) {
       setError(`Payment failed: ${payload.error.message}`);
+      db.collection('users')
+      .doc(user?.uid)
+      .collection('orders')
+      .doc(payload.paymentIntent.id)
+      .set({
+        basket: basket, 
+        amount: payload.paymentIntent.amount,
+        created: payload.paymentIntent.created, 
+      }) // create a new collection called orders
       setProcessing(false);
       setSucceeded(false);
     } else {
       setError(null);
       setProcessing(false);
       setSucceeded(true);
+      // empty the basket
+      emptyBasket();
+      // redirect to orders page
       history.push('/orders');
       // Clear the basket or do any other necessary actions
     }

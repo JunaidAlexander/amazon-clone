@@ -44,6 +44,14 @@ payload: GetBasketFromStorage(),
     });
   };
 
+const emptyBasket = () => {
+dispatch({
+type: "EMPTY_BASKET",
+
+})
+}
+
+
   return (
     <ShoppingContext.Provider
       value={{
@@ -54,6 +62,7 @@ payload: GetBasketFromStorage(),
         setUser,
         removeFromBasket,
         getBasket,
+        emptyBasket,
       }}
     >
       {props.children}
