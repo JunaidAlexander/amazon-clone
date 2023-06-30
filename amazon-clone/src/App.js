@@ -41,7 +41,7 @@ const App = () => {
 
       return () => unsubscribe(); // Cleanup function to unsubscribe from the listener
     },
-    [setUser, getBasket]
+    [auth]
   );
 
   return (
