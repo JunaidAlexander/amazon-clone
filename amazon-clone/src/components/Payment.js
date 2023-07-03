@@ -24,15 +24,17 @@ export default function Payment() {
   const [clientSecret, setClientSecret] = useState('');
 
   useEffect(() => {
+
     // Generate the special stripe secret which will allow us to charge the customer
     const getClientSecret = async () => {
       const response = await axios.post(`/payments/create?total=${getBasketTotal(basket) * 100}`,{
-        
+
       });
       setClientSecret(response.data.clientSecret);
+      console.log("the response is => ", response);
     };
     getClientSecret();
-  }, [basket, getBasketTotal]);
+  }, [basket]);
 
   console.log("the secret is => ", clientSecret);
 
@@ -48,15 +50,15 @@ export default function Payment() {
 
     if (payload.error) {
       setError(`Payment failed: ${payload.error.message}`);
-      db.collection('users')
-      .doc(user?.uid)
-      .collection('orders')
-      .doc(payload.paymentIntent.id)
-      .set({
-        basket: basket, 
-        amount: payload.paymentIntent.amount,
-        created: payload.paymentIntent.created, 
-      }) // create a new collection called orders
+      // db.collection('users')
+      // .doc(user?.uid)
+      // .collection('orders')
+      // .doc(payload.paymentIntent.id)
+      // .set({
+      //   basket: basket, 
+      //   amount: payload.paymentIntent.amount,
+      //   created: payload.paymentIntent.created, 
+      // }) // create a new collection called orders
       setProcessing(false);
       setSucceeded(false);
     } else {

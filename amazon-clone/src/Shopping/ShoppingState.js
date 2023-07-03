@@ -10,7 +10,7 @@ const ShoppingState = (props) => {
 
   // Selectors
   const getBasketTotal = (basket) => {
-     basket?.reduce((amount, item) => item.price + amount, 0);
+    return basket?.reduce((amount, item) => item.price + amount, 0);
   };
 
   const addToBasket = async ({item}) => {
