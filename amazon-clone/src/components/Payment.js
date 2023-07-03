@@ -26,9 +26,8 @@ export default function Payment() {
   useEffect(() => {
     // Generate the special stripe secret which will allow us to charge the customer
     const getClientSecret = async () => {
-      const response = await axios.post({
-        method: 'post',    
-        url:`/payments/create?total=${getBasketTotal(basket) * 100}`
+      const response = await axios.post(`/payments/create?total=${getBasketTotal(basket) * 100}`,{
+        
       });
       setClientSecret(response.data.clientSecret);
     };
